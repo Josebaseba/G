@@ -107,6 +107,7 @@
     options.headers = options.headers || {}
     options.type    = options.type || 'json'
 
+    if(!method) method = 'GET';
     if(method === 'GET' && payload){
       url += '?' + payload;
       payload = null;
@@ -166,7 +167,7 @@
     parallel: parallel,
     waterfall: waterfall,
     ajax: ajax,
-    ajaxTimeout: null
+    ajaxTimeout: 0
   };
 
   window.G = G;

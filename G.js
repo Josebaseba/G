@@ -102,9 +102,10 @@
     var xhr     = newXHR();
     var payload = _encode(data);
 
-    data            = data || {};
-    options         = options || {};
-    options.headers = options.headers || {}
+    data    = data || {};
+    options = options || {};
+    headers = options.headers || {};
+    options.headers = _extend(G.headers, headers);
     options.type    = options.type || 'json'
 
     if(!method) method = 'GET';
@@ -162,12 +163,25 @@
     return xhr_parsed;
   }
 
+  function _extend() {
+    var obj = {};
+    for(var i = 0; i < arguments.length; i++){
+      for(var prop in arguments[i]) {
+        if(hasOwnProperty.call(arguments[i], prop)) {
+          obj[prop] = arguments[i][prop];
+        }
+      }
+    }
+    return obj;
+  }
+
   var G = {
-    Promise: Promise,
-    parallel: parallel,
-    waterfall: waterfall,
-    ajax: ajax,
-    ajaxTimeout: 0
+    Promise     : Promise,
+    parallel    : parallel,
+    waterfall   : waterfall,
+    ajax        : ajax,
+    headers     : {},
+    ajaxTimeout : 0
   };
 
   window.G = G;

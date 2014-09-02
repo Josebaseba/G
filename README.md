@@ -19,7 +19,7 @@ Run diferents async functions at the same time, at the end get all the values in
 			async(x),
 			async2(x,y,z),
 			async3()
-		]).then(function(err, res){});
+		]).then(function(res){});
 
 ######waterfall:
 Run async functions in order, passing values between them (optional).

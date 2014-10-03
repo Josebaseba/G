@@ -3,7 +3,7 @@
   "description"   : "Micro HTTP and Promises library.",
   "author"        : "Joseba Legarreta @josebaseba",
   "main"          : "G.js",
-  "version"       : "0.1.0",
+  "version"       : "0.1.1",
   "license"       : "MIT",
   "repository": {
     "type": "git",

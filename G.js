@@ -151,7 +151,7 @@
   function _parseXHR(xhr, type){
     xhr_parsed = {};
     for(var attr in xhr){
-      if(xhr.hasOwnProperty(attr)) xhr_parsed[attr] = xhr[attr];
+      xhr_parsed[attr] = xhr[attr];
     }
     if(xhr.responseText && type === 'json'){
       try{
